@@ -1,0 +1,230 @@
+/* ===== DashboardShelter: estilos aislados con CSS Modules =====
+   Vite convierte cada clase en un nombre único (ej. _hero_x7k2a),
+   así no choca con clases iguales de otros componentes. */
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(255, 233, 190, 0.55), transparent 55%),
+    linear-gradient(135deg, var(--cafe-oscuro) 0%, var(--cafe) 55%, #c99a6b 100%);
+  color: var(--blanco);
+  padding: 1.25rem clamp(1rem, 5vw, 4rem) 7rem;
+  /* Curva inferior como en el diseño de referencia */
+  clip-path: ellipse(120% 100% at 50% 0%);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--blanco);
+  text-decoration: none;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.navLinks a {
+  color: var(--crema);
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+
+.navLinks a:hover {
+  border-bottom-color: var(--dorado);
+}
+
+.heroContenido {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+}
+
+.heroTexto h1 {
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.heroTexto p {
+  max-width: 46ch;
+  color: var(--crema);
+  margin-bottom: 1.5rem;
+}
+
+.boton {
+  display: inline-block;
+  background-color: var(--dorado);
+  color: var(--cafe-oscuro);
+  font-weight: 800;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  background-color: var(--blanco);
+}
+
+.heroIlustracion {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  max-width: 320px;
+  margin-left: auto;
+  border-radius: 50%;
+  background-color: rgba(253, 236, 200, 0.25);
+}
+
+.heroMascota {
+  font-size: clamp(6rem, 14vw, 10rem);
+  line-height: 1;
+}
+
+.heroHuella {
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  font-size: 2.5rem;
+  opacity: 0.6;
+  transform: rotate(-20deg);
+}
+
+/* ---------- Accesos rápidos ---------- */
+.acciones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: -3.5rem;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.accion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  width: 140px;
+  padding: 1.1rem 0.75rem;
+  background-color: var(--crema-claro);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(122, 78, 45, 0.18);
+  color: var(--cafe);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.accion:hover {
+  transform: translateY(-3px);
+}
+
+.accionIcono {
+  font-size: 2.2rem;
+}
+
+/* ---------- Contenido (children) ---------- */
+.contenido {
+  flex: 1;
+  width: 100%;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: var(--cafe);
+  color: var(--crema);
+  padding: 3rem clamp(1rem, 5vw, 4rem) 1rem;
+  border-top: 10px solid var(--beige);
+  border-radius: 50% 50% 0 0 / 40px 40px 0 0;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footerGrid h3 {
+  color: var(--blanco);
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.footerMarca {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--blanco);
+  margin-bottom: 0.4rem;
+}
+
+.copy {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(253, 236, 200, 0.3);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .hero {
+    padding-bottom: 6rem;
+    clip-path: ellipse(160% 100% at 50% 0%);
+  }
+
+  .heroContenido {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .heroTexto p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroIlustracion {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .accion {
+    width: 105px;
+    font-size: 0.85rem;
+  }
+}

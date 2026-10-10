@@ -1,0 +1,53 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circulo {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--beige);
+  font-size: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.valor {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--cafe-oscuro);
+}
+
+.etiqueta {
+  font-weight: 700;
+  color: var(--cafe);
+  margin-top: 0.2rem;
+}
+
+.barra {
+  width: 70%;
+  height: 6px;
+  margin-top: 0.6rem;
+  border-radius: 999px;
+  background-color: var(--beige);
+  overflow: hidden;
+}
+
+.relleno {
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--cafe);
+}

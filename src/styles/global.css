@@ -1,0 +1,83 @@
+/* ===== Estilos globales: solo variables, reset y clases de sección =====
+   Los estilos de cada componente viven en su propio *.module.css */
+
+:root {
+  /* Paleta cálida del refugio */
+  --cafe-oscuro: #7a4e2d;
+  --cafe: #a47148;
+  --dorado: #fbd38d;
+  --beige: #fce5b8;
+  --crema: #fdf1dc;
+  --crema-claro: #fffaf1;
+  --blanco: #ffffff;
+  --texto: #4a3426;
+  --texto-suave: #7d6656;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--crema-claro);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--cafe);
+  outline-offset: 3px;
+}
+
+/* Secciones que App.jsx pasa como children */
+.seccion {
+  padding: 4rem clamp(1rem, 5vw, 4rem);
+}
+
+.seccion-crema {
+  background-color: var(--crema);
+  border-radius: 50% 50% 50% 50% / 40px 40px 40px 40px;
+}
+
+.seccion-titulo {
+  text-align: center;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: var(--cafe);
+  margin-bottom: 0.3rem;
+}
+
+.seccion-subtitulo {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+  margin-bottom: 2.5rem;
+}
+
+.seccion-crema .seccion-titulo {
+  margin-bottom: 2.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
